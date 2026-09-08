@@ -1,0 +1,35 @@
+{
+    "name": "hubmais/h-checkout-php",
+    "description": "Checkout Hubmais for online sales.",
+    "keywords": ["laravel", "php", "checkout", "hubmais", "e-commerce"],
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.36"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hubmais\\HCheckout\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hubmais\\HCheckout\\Providers\\HCheckoutServiceProvider"
+            ],
+            "aliases": {
+                "HCheckout": "Hubmais\\HCheckout\\Facades\\HCheckout"
+            }
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
