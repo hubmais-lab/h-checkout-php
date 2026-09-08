@@ -101,7 +101,7 @@ use Hubmais\HCheckout\Enums\PaymentTypeEnum;
 use Hubmais\HCheckout\Facades\HCheckout;
 
 $fees = HCheckout::fees()->show(
-    amount: 100.25,
+    amount: '100.25',
     payment_type: PaymentTypeEnum::CREDIT,
     card_brand: CardBrandEnum::VISA
 );
@@ -116,7 +116,7 @@ $fees = HCheckout::fees()->show(
 use Hubmais\HCheckout\Facades\HCheckout;
 
 $transaction = HCheckout::transactions()->pix(
-    amount: 100.00,
+    amount: '100.00',
     description: 'Teste'
 );
 ```
@@ -130,15 +130,42 @@ use Hubmais\HCheckout\Facades\HCheckout;
 $card = HCheckout::transactions()->tokenizeCard(
     buyer_id: '....', // ID retornado no cadastro de cliente HCheckout::buyers()->save()
     doc: '000.000.000-00', // CPF do titular do cartão
-    'card_number' => '1234 5678 9012 3456',
-    'holder_name' => 'FULANO DE TAL',
-    'expiration_month' => '06',
-    'expiration_year' => '2028',
-    'security_code' => '123'
+    card_number: '1234 5678 9012 3456',
+    holder_name: 'FULANO DE TAL',
+    expiration_month: '06',
+    expiration_year: '2028',
+    security_code: '123'
 );
 ```
 
 ## Criando venda Crédito
+
+<p>Para as vendas com cartão, é necessário incluir o script de validação do estabelecimento.</p>
+
+<p>No fim da tag body insira o script conforme exemplo:</p>
+
+```html
+<html>
+
+    ....
+
+    <body>
+
+        ...
+
+        <form id="form-id">
+
+        </form>
+
+        ...
+
+        <script type="text/javascript" src="https://{endpoint}/v1/marketplaces/{marketplaceId}/sellers/{sellerId}/fingerprint?form_id=form-id"></script>
+
+    </body>
+</html>
+```
+
+<p>Em seu método de envio receba o campo fingerprint embutido na tag form e envie juntamente na requisição de pagamento via cartão.</p>
 
 ```php
 <?php
@@ -146,7 +173,7 @@ $card = HCheckout::transactions()->tokenizeCard(
 use Hubmais\HCheckout\Facades\HCheckout;
 
 $transaction = HCheckout::transactions()->credit(
-    amount: 100.00,
+    amount: '100.00',
     installments: 1,
     buyer: [
         'id' => '....', // ID retornado no cadastro de cliente HCheckout::buyers()->save()
@@ -158,7 +185,8 @@ $transaction = HCheckout::transactions()->credit(
         'expiration_month' => '06',
         'expiration_year' => '2028',
         'security_code' => '123'
-    ]
+    ],
+    fingerprint: '...'
 );
 ```
 
@@ -170,7 +198,7 @@ $transaction = HCheckout::transactions()->credit(
 use Hubmais\HCheckout\Facades\HCheckout;
 
 $transaction = HCheckout::transactions()->boleto(
-    amount: 100.00,
+    amount: '100.00',
     description: 'Teste',
     buyer: [
         'id' => '....', // ID retornado no cadastro de cliente HCheckout::buyers()->save()
@@ -189,7 +217,7 @@ $transaction = HCheckout::transactions()->boleto(
 use Hubmais\HCheckout\Facades\HCheckout;
 
 $transaction = HCheckout::transactions()->boleto(
-    amount: 100.00,
+    amount: '100.00',
     description: 'Teste',
     payments_accepts: ['credit','pix','boleto'],
     payment_default: 'credit'
