@@ -1,7 +1,7 @@
 <?php
 namespace Hubmais\HCheckout\Services;
 
-use Hubmais\HCheckout\Client;
+use Hubmais\HClient\Client;
 
 class Manager
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Hubmais\HCheckout\Support;
 
-use Hubmais\HCheckout\Client;
-use Hubmais\HCheckout\Exceptions\ClientException;
+use Hubmais\HClient\Client;
+use Hubmais\HClient\Exceptions\ClientException;
 
 class EndpointBuilder
 {

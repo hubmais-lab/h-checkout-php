@@ -37,7 +37,7 @@ Depois é necessário configurar o arquivo de configuração, presente em config
 ```php
 <?php
 
-use Hubmais\HCheckout\Client;
+use Hubmais\HHttpClient\Client;
 use Hubmais\HCheckout\Services\Manager;
 
 $client = new Client('<endpoint>');

@@ -4,7 +4,7 @@
     "keywords": ["laravel", "php", "checkout", "hubmais", "e-commerce"],
     "require": {
         "php": "^7.2 || ^8.0",
-        "guzzlehttp/guzzle": "^7.2"
+        "hubmais/h-http-client": "^2.0"
     },
     "require-dev": {
         "pestphp/pest": "^2.36"
