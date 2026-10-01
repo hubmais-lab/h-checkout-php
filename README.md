@@ -26,7 +26,7 @@ Após a instalação é necessário executar o comando abaixo:
 php artisan vendor:publish --provider="Hubmais\HCheckout\Providers\HCheckoutServiceProvider"
 ```
 
-Depois é necessário configurar o arquivo de configuração, presente em config/h-checkout.php com as credenciais fornecidas.
+Depois é necessário configurar o arquivo de configuração, presente em config/h-client.php com as credenciais fornecidas.
 
 ***
 

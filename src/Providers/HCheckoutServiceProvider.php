@@ -10,6 +10,8 @@ class HCheckoutServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+        $this->app->register(\Hubmais\HClient\Providers\HClientServiceProvider::class);
+        
        /** @noinspection PhpUndefinedMethodInspection */
         $this->app->singleton(\Hubmais\HCheckout\Services\Manager::class, function ($app) {
             return new \Hubmais\HCheckout\Services\Manager($app->make(\Hubmais\HClient\Client::class));
