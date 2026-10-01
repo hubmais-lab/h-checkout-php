@@ -41,7 +41,7 @@ expect()->extend('toBeOne', function () {
 
 function init_api()
 {
-    $client = new \Hubmais\HCheckout\Client('https://teste.api.payments.hubmais.tec.br');
+    $client = new \Hubmais\HClient\Client('https://teste.api.payments.hubmais.tec.br');
     $client->setToken('aUZOsGTovhv5OQfBdriYlvzlGdfRa2o4RLPQnb3geKDoPWM0AUlVzbzg0SzF');
     $client->setMarketplaceId('e3200693db61b5715e804bec46e134c9');
     $client->setSellerId('eecb4f3b3c8e11eba119ac1f6bd294b0');
