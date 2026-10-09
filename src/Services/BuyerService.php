@@ -1,7 +1,7 @@
 <?php
 namespace Hubmais\HCheckout\Services;
 
-use Hubmais\HCheckout\Support\EndpointBuilder;
+use Hubmais\HClient\Support\EndpointBuilder;
 
 class BuyerService extends BaseService
 {

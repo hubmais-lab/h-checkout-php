@@ -7,8 +7,8 @@ use Hubmais\HCheckout\Exceptions\BoletoValidationException;
 use Hubmais\HCheckout\Exceptions\BuyerValidationException;
 use Hubmais\HCheckout\Exceptions\CallbackValidationException;
 use Hubmais\HCheckout\Exceptions\CardValidationException;
-use Hubmais\HCheckout\Support\EndpointBuilder;
 use Hubmais\HCheckout\Support\PayloadFormatter;
+use Hubmais\HClient\Support\EndpointBuilder;
 
 class TransactionService extends BaseService
 {

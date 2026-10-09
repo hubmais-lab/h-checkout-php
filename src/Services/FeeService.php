@@ -4,7 +4,7 @@ namespace Hubmais\HCheckout\Services;
 use Hubmais\HCheckout\Enums\CardBrandEnum;
 use Hubmais\HCheckout\Enums\OperationTypeEnum;
 use Hubmais\HCheckout\Enums\PaymentTypeEnum;
-use Hubmais\HCheckout\Support\EndpointBuilder;
+use Hubmais\HClient\Support\EndpointBuilder;
 
 class FeeService extends BaseService
 {
